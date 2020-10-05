@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    --ball-size: 40px;
+    --player-width: 40px;
+    --player-height: 100px;
+}
+
+body {
+    background-color: cadetblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+#board {
+    background-color: black;
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+}
+
+.player {
+    background-color: white;
+    width: var(--player-width);
+    height: var(--player-height);
+    position: absolute;
+    top: 200px;
+    bottom: 200px;
+}
+
+#player1 {
+    left: 50px;
+    right: 710px;
+}
+
+#player2 {
+    right: 50px;
+}
+
+#ball {
+    position: absolute;
+    background-color: white;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    border-radius: 50%;
+    top: 225px;
+    left: 375px;
+}
