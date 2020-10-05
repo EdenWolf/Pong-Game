@@ -9,11 +9,8 @@ $(function() {
     var side = 1;
     var computerS = 0;
     var playerS = 0;
-    console.log(($p1).css('right'));
-    console.log("top: " + parseInt(($p2).css('top')));
-    console.log("bottom: " + parseInt(($p2).css('bottom')));
-    console.log("left: " + parseInt(($p2).css('left')));
 
+    // start the game
     function startGame() {
         $(document).off("keydown",startGame);
 
@@ -35,18 +32,18 @@ $(function() {
                 side *= (-1);
             }
 
+            // if one side wins
             if (right <= 0 || left <= 0) {
                 if (right <= 0){
-                // computerS++;
                     $('#computer-score').text(++computerS);
                 }
                 else {
                     $('#player-score').text(++playerS);
                 }
-                top = 225;
-                bottom = 225;
-                left = 375;
-                right = 375;
+                top = 230;
+                bottom = 230;
+                left = 380;
+                right = 380;
             }
 
             // update the position of the ball
@@ -58,7 +55,7 @@ $(function() {
         }, intervalTime);  
     }
     
-
+    // move the computer player
     setInterval(function() {
         if (parseInt($($ball).css('top')) < parseInt($($p1).css('top'))) {
             $($p1).css({'top' : parseInt(($p1).css('top')) - 1 +'px',
@@ -70,6 +67,7 @@ $(function() {
         }
     }, computerTime);
 
+    // when a key is pressed
     $(document).keydown(function(e){
         console.log(e.keyCode);
         if ((e.keyCode == 38 || e.keyCode == 87) && parseInt(($p2).css('top')) > 0) {// up
@@ -81,7 +79,8 @@ $(function() {
             'bottom' : parseInt(($p2).css('bottom')) - 10 +'px'});
         }
     });
-
+    
+    // start the game whan a key is pressed
     $(document).keydown(startGame);
 
 });
